@@ -19,5 +19,5 @@ deploy:
   bucket_path: "docker-practice"
   on:
     branch: master
-  access_key_id: AKIA5B6ERPXGU5KA7OXN
-  secret_access_key: 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
+  access_key_id: $AKIA5B6ERPXGU5KA7OXN
+  secret_access_key: "$MdJ3nTZPFopCilDfqWMDks/pXGOGTPZse/iDUf0e"
