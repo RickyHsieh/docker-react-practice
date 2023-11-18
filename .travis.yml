@@ -9,3 +9,15 @@ before_install:
 
 script:
   - docker run -e CI=true ricky/docker-react-practice npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-southeast-2"
+  app: "docker-practice"
+  env: "Docker-practice-env"
+  bucket_name: "elasticbeanstalk-ap-southeast-2-897523482061"
+  bucket_path: "docker-practice"
+  on:
+    branch: master
+  access_key_id: AKIA5B6ERPXGU5KA7OXN
+  secret_access_key: "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"
