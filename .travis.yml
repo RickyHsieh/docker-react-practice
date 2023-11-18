@@ -5,19 +5,19 @@ services:
   - docker
 
 before_install:
-  - docker build -t ricky/docker-react-practice -f Dockerfile.dev .
+  - docker build -t stephengrider/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true ricky/docker-react-practice npm run test
+  - docker run -e CI=true stephengrider/docker-react npm run test
 
 deploy:
   provider: elasticbeanstalk
-  region: "ap-southeast-2"
-  app: "docker-practice"
-  env: "Docker-practice-env"
-  bucket_name: "elasticbeanstalk-ap-southeast-2-897523482061"
-  bucket_path: "docker-practice"
+  region: "us-east-1"
+  app: "docker"
+  env: "docker-env"
+  bucket_name: "elasticbeanstalk-us-east-1-923445559289"
+  bucket_path: "docker"
   on:
-    branch: master
-  access_key_id: $AKIA5B6ERPXGU5KA7OXN
-  secret_access_key: "$MdJ3nTZPFopCilDfqWMDks/pXGOGTPZse/iDUf0e"
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
